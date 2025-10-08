@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  lampac:
+    image: immisterio/lampac:latest
+    container_name: lampac
+    restart: always
+    ports:
+      - "12127:9118"
+    volumes:
+      - ./cache:/home/cache
+      - ./database:/home/database
+      - ./cache/bookmarks:/home/cache/bookmarks
+      - ./cache/timecode:/home/cache/timecode  
+      - ./init.conf:/home/init.conf
+
+      # Конфигурация модулей
+      - ./manifest.json:/home/module/manifest.json
+
+      # Файл для автооновлення модулів
+      - ./module/repository.yaml:/home/module/repository.yaml
+
+      # Скрипт локалізації
+      - ./ua.js:/home/wwwroot/ua.js
+
+      # DLNA медиафайлы
+      - ./dlna:/home/dlna
+
+      # Конфигурация встроенного TorrServer
+      - ./torrserver:/home/torrserver
+
+    environment:
+      - TZ=Europe/Kiev
