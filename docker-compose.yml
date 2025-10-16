@@ -4,7 +4,7 @@ services:
     container_name: lampac
     restart: unless-stopped
     ports:
-      - "12127:9118"
+      - "9118:9118"
     environment:
       - TZ=Europe/Kiev
     volumes:
@@ -29,6 +29,3 @@ services:
       # Тільки bookmarks і timecode з cache
       - ./cache/bookmarks:/home/cache/bookmarks
       - ./cache/timecode:/home/cache/timecode
-
-   environment:
-     - TZ=Europe/Kiev
