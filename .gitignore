@@ -1,0 +1,6 @@
+# Ігноруємо вміст тимчасових папок
+cache/bookmarks/*
+cache/timecode/*
+dlna/temp/*
+dlna/thumbs/*
+dlna/tmdb/*

@@ -1,6 +1,5 @@
 - repository: https://github.com/lampame/lampac-ukraine
   branch: main
   modules:
-    - CikavaIdeya
     - Uaflix
     - UaTUT
