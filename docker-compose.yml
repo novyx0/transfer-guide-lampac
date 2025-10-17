@@ -16,3 +16,4 @@ services:
      - ./torrserver/settings.json:/home/torrserver/settings.json
      - ./cache/bookmarks:/home/cache/bookmarks
      - ./cache/timecode:/home/cache/timecode
+     - ./lampainit.my.js:/home/plugins/lampainit.js
