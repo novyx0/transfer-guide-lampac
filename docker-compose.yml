@@ -8,24 +8,11 @@ services:
     environment:
       - TZ=Europe/Kiev
     volumes:
-      # Основна конфігурація
-      - ./init.conf:/home/init.conf
-
-      # Конфігурація модулів
-      - ./manifest.json:/home/module/manifest.json
-
-      # Файл для автооновлення модулів
-      - ./module/repository.yaml:/home/module/repository.yaml
-
-      # Модуль SelfCDN
-      - ./module/SelfCDN:/home/module/SelfCDN
-
-      # DLNA медіафайли
-      - ./dlna:/home/dlna
-
-      # Тільки settings.json від TorrServer
-      - ./torrserver/settings.json:/home/torrserver/settings.json
-
-      # Тільки bookmarks і timecode з cache
-      - ./cache/bookmarks:/home/cache/bookmarks
-      - ./cache/timecode:/home/cache/timecode
+     - ./init.conf:/home/init.conf
+     - ./manifest.json:/home/module/manifest.json
+     - ./module/repository.yaml:/home/module/repository.yaml
+     - ./module/SelfCDN:/home/module/SelfCDN
+     - ./dlna:/home/dlna
+     - ./torrserver/settings.json:/home/torrserver/settings.json
+     - ./cache/bookmarks:/home/cache/bookmarks
+     - ./cache/timecode:/home/cache/timecode
