@@ -8,12 +8,12 @@ services:
     environment:
       - TZ=Europe/Kiev
     volumes:
-     - ./init.conf:/home/init.conf
-     - ./manifest.json:/home/module/manifest.json
-     - ./module/repository.yaml:/home/module/repository.yaml
-     - ./module/SelfCDN:/home/module/SelfCDN
-     - ./dlna:/home/dlna
-     - ./torrserver/settings.json:/home/torrserver/settings.json
-     - ./cache/bookmarks:/home/cache/bookmarks
-     - ./cache/timecode:/home/cache/timecode
-     - ./lampainit.my.js:/home/plugins/lampainit.my.js
+    - ./init.conf:/home/init.conf
+    - ./manifest.json:/home/module/manifest.json
+    - ./module/repository.yaml:/home/module/repository.yaml
+    - ./module/SelfCDN:/home/module/SelfCDN
+    - ./dlna:/home/dlna
+    - ./torrserver/settings.json:/home/torrserver/settings.json
+    - ./database/SyncUser.sql:/home/database/SyncUser.sql
+    - ./lampainit.my.js:/home/plugins/lampainit.my.js
+
