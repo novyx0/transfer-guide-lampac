@@ -1,2 +1,2 @@
 # Створіть необхідні порожні папки
-mkdir -p cache/{bookmarks,timecode} dlna/{temp,thumbs,tmdb}
+mkdir -p datebase dlna/{temp,thumbs,tmdb}
