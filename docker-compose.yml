@@ -16,4 +16,4 @@ services:
     - ./torrserver/settings.json:/home/torrserver/settings.json
     - ./database/SyncUser.sql:/home/database/SyncUser.sql
     - ./lampainit.my.js:/home/plugins/lampainit.my.js
-
+    - ./cache/transcoding:/home/cache/transcoding
