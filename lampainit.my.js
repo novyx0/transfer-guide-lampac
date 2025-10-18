@@ -1,20 +1,19 @@
 (function() {
   'use strict';
 
-  // Первоначальная сортировка меню
   if (!localStorage.getItem('menu_sort'))
     localStorage.setItem('menu_sort', '["Головна","Фільми","Серіали","Релізи","Аніме","Вибране","IPTV","Історія","Каталог","Фільтр","Розклад","Торренти","Полуничка"]');
 
   window.lampa_settings = {
-    torrents_use: true,    // Торренты включены
+    torrents_use: true,
     demo: false,
     read_only: false,
-    socket_use: true,      // Включаем сокеты для CUB
+    socket_use: true,
     socket_url: undefined,
-    socket_methods: true,  // Включаем методы CUB
-    account_use: true,     // Включаем аккаунт для закладок и истории
-    account_sync: true,    // Включаем синхронизацию через CUB
-    plugins_store: false,  // Магазин отключен (можно включить при необходимости)
+    socket_methods: true,
+    account_use: true,
+    account_sync: true,
+    plugins_store: false,
     iptv: false,
     feed: false,
     white_use: false,
@@ -54,9 +53,6 @@
         unic_id = Lampa.Utils.uid(8).toLowerCase();
         Lampa.Storage.set('lampac_unic_id', unic_id);
       }
-
-      // Загрузка privateinit.js с передачей email и уникального id
-      Lampa.Utils.putScriptAsync(["{localhost}/privateinit.js?account_email=" + encodeURIComponent(Lampa.Storage.get('account_email', '')) + "&uid=" + encodeURIComponent(unic_id)], function() {});
 
       if (window.appready) {
         start();
@@ -112,7 +108,6 @@
     if (lampainit_invc)
       lampainit_invc.first_initiale();
 
-    // Не скрываем меню Вибране и Історія, скрываем лишь ненужные разделы
     Lampa.Settings.listener.follow('open', function(e) {
       $(['iptv'].map(function(c) {
         return '[data-component="' + c + '"]';
@@ -121,8 +116,8 @@
 
     Lampa.Listener.follow('full', function(e) {
       if (e.type == 'complite') {
-        e.object.activity.render().find('.button--subscribe').remove(); // удаляем подписку на озвучку
-        $('.open--broadcast').remove(); // удаляем "Открыть на другом устройстве"
+        e.object.activity.render().find('.button--subscribe').remove();
+        $('.open--broadcast').remove();
       }
     });
 
@@ -139,3 +134,4 @@
     });
   }
 })();
+
