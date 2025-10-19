@@ -1,6 +1,6 @@
 services:
   lampac:
-    image: immisterio/lampac:latest
+    image: immisterio/lampac:arm64
     container_name: lampac
     restart: unless-stopped
     ports:
