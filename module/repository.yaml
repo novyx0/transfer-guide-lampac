@@ -1,0 +1,7 @@
+- repository: https://github.com/lampame/lampac-ukraine
+  modules:
+    - UaTUT
+- repository: https://github.com/lampame/lampac-ukraine
+  branch: painflix
+  modules:
+    - Uaflix

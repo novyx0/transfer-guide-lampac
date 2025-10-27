@@ -1,0 +1,17 @@
+services:  
+  lampac:  
+    image: immisterio/lampac:latest  
+    container_name: lampac  
+    restart: unless-stopped  
+    ports:  
+      - "12127:9118"  
+    environment:  
+      - TZ=Europe/Kiev  
+    volumes:  
+      - ./manifest.json:/home/module/manifest.json  
+      - ./module/repository.yaml:/home/module/repository.yaml  
+      - ./module/SelfCDN:/home/module/SelfCDN  
+      - ./dlna:/home/dlna  
+      - ./torrserver:/home/torrserver  
+      - ./database:/home/database
+      - ./cache:/home/cache
