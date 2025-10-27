@@ -8,10 +8,11 @@ services:
     environment:  
       - TZ=Europe/Kiev  
     volumes:  
-      - ./manifest.json:/home/module/manifest.json  
-      - ./module/repository.yaml:/home/module/repository.yaml  
-      - ./module/SelfCDN:/home/module/SelfCDN  
-      - ./dlna:/home/dlna  
-      - ./torrserver:/home/torrserver  
+      - ./init.conf:/home/init.conf
+      - ./manifest.json:/home/module/manifest.json
+      - ./module/repository.yaml:/home/module/repository.yaml
+      - ./module/SelfCDN:/home/module/SelfCDN
+      - ./dlna:/home/dlna
+      - ./torrserver:/home/torrserver
       - ./database:/home/database
       - ./cache:/home/cache
