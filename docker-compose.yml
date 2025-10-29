@@ -16,3 +16,4 @@ services:
       - ./torrserver:/home/torrserver
       - ./database:/home/database
       - ./cache:/home/cache
+      - ./lampainit.my.js:/home/plugins/lampainit.js
