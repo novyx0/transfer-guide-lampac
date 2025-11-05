@@ -1,0 +1,36 @@
+services:
+  lampac-d:
+    image: immisterio/lampac:latest
+    container_name: lampac-d
+    restart: unless-stopped
+    mem_limit: 650m
+    mem_reservation: 500m
+    cpus: 0.4
+    ports:
+      - "11357:9118"
+    environment:
+      - TZ=Europe/Kiev
+      - NODE_ENV=production
+      - NODE_OPTIONS=--max-old-space-size=600
+    volumes:
+      - ./init.conf:/home/init.conf
+      - ./manifest.json:/home/module/manifest.json
+      - ./module/repository.yaml:/home/module/repository.yaml
+      - ./torrserver:/home/torrserver
+      - ./database:/home/database
+      - ./cache:/home/cache
+      - ./devices.js:/home/wwwroot/devices.js
+      - ./lampainit.my.js:/home/plugins/lampainit.js
+      - ./lampainit-invc.my.js:/home/plugins/lampainit-invc.js
+    ulimits:
+      nofile:
+        soft: 100000
+        hard: 100000
+      nproc:
+        soft: 50000
+        hard: 50000
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
